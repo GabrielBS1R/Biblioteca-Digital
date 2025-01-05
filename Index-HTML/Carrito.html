@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/CSS/Carrito.css">
+    <link rel="stylesheet" href="/CSS/BibliotecaDigital.css">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <img src="/IMG/Logo sin fondo.webp" alt="Logo de la web" class="logo">
+            <h1 class="title">Biblioteca Virtual</h1>
+        </header>
+
+        <!-- Carrito -->
+        <div class="cart-container">
+            <h2 class="cart-title">Tu Carrito</h2>
+
+            <!-- Lista de los libros en el carrito -->
+            <div id="cart" class="cart-items">
+                <!-- Los libros del carrito aparecerán aquí -->
+            </div>
+
+            <!-- Total del carrito -->
+            <div class="cart-total">
+                <h3>Total de Días de Alquiler: <span id="total-dias">0</span> días</h3>
+                <div id="total">Total: $0</div>
+            </div>
+
+            <!-- Botón para confirmar el alquiler -->
+            <button id="confirm" class="confirm-button" disabled onclick="confirmarAlquiler()">Confirmar Alquiler</button>
+        </div>
+    </div>
+
+    <script>
+        let libroSeleccionado = null;
+
+        // Función para agregar al carrito con la cantidad de días seleccionada
+        function agregarAlCarritoConDias() {
+            const days = parseInt(document.getElementById('days').value);
+
+            if (!libroSeleccionado) {
+                return;
+            }
+
+            // Recuperar el carrito desde localStorage o inicializar uno vacío
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            // Comprobar si el libro ya está en el carrito
+            const libroExistente = carrito.find(item => item.id === libroSeleccionado.id);
+
+            if (libroExistente) {
+                // Si el libro ya está, aumentar la cantidad
+                libroExistente.cantidad++;
+            } else {
+                // Si no está, agregarlo al carrito con la cantidad seleccionada de días
+                carrito.push({ ...libroSeleccionado, cantidad: 1, dias: days });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            // Actualizar la vista del carrito
+            actualizarCarrito();
+        }
+
+        // Función para actualizar el carrito en la interfaz
+        function actualizarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const cartContainer = document.getElementById('cart');
+            const totalElement = document.getElementById('total');
+            const totalDiasElement = document.getElementById('total-dias');
+            let total = 0;
+            let totalDias = 0;
+
+            // Limpiar el carrito visual
+            cartContainer.innerHTML = '';
+
+            // Mostrar los libros del carrito
+            carrito.forEach(item => {
+                const bookElement = document.createElement('div');
+                bookElement.classList.add('cart-item');
+                bookElement.innerHTML = `
+                    <div class="cart-item-details">
+                        <span class="cart-item-title">${item.title}</span>
+                        <span class="cart-item-days">Días: ${item.dias}</span>
+                        <span class="cart-item-quantity">Cantidad: ${item.cantidad}</span>
+                        <button onclick="eliminarDelCarrito(${item.id})" class="remove-button">Eliminar</button>
+                    </div>
+                `;
+                cartContainer.appendChild(bookElement);
+
+                // Calcular total de días
+                totalDias += item.dias * item.cantidad;
+                total += item.dias * item.cantidad * item.price;
+            });
+
+            // Actualizar el total
+            totalElement.textContent = `Total: $${total}`;
+            totalDiasElement.textContent = totalDias;
+
+            // Habilitar o deshabilitar el botón de confirmar según si hay productos en el carrito
+            const confirmButton = document.getElementById('confirm');
+            confirmButton.disabled = carrito.length === 0;
+        }
+
+        // Función para eliminar un libro del carrito
+        function eliminarDelCarrito(id) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            // Filtrar el carrito eliminando el libro con el id especificado
+            carrito = carrito.filter(item => item.id !== id);
+
+            // Guardar el carrito actualizado
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            // Actualizar la vista del carrito
+            actualizarCarrito();
+        }
+
+        // Función para confirmar el alquiler
+        function confirmarAlquiler() {
+            alert('El alquiler ha sido confirmado.');
+            // Aquí puedes agregar lógica para redirigir o procesar el alquiler
+        }
+
+        // Al cargar la página, actualizar el carrito
+        window.onload = actualizarCarrito;
+    </script>
+
+</body>
+
+</html>

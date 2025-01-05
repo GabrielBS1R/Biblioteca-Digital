@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/BibliotecaDigital.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="/IMG/Logo sin fondo.webp" alt="Logo Biblioteca Digital" style="height: 55px; width: auto;">
+            <div class="h1">
+                <h1>Biblioteca Digital</h1>
+            </div>
+        </div>
+
+        <div class="carrito">
+            <a href="/Index-HTML/Carrito.html" title="Ver carrito">
+                <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
+            </a>
+        </div>
+        
+    </header>
+    
+
+    <!-- Main Content -->
+    <main>
+        
+               
+        <div class="content-wrapper">
+            <!-- Sidebar (Categorías) -->
+            <aside class="sidebar">
+                <h3>Categorías</h3>
+                <ul>
+                    <li><a href="Ficcion.html">Ficción</a></li>
+                    <li><a href="NoFiccion.html">No Ficción</a></li>
+                    <li><a href="Ciencia.html">Ciencia</a></li>
+                    <li><a href="Historia.html">Historia</a></li>
+                    <li><a href="Arte.html">Arte</a></li>
+                    <li><a href="Filosofia.html">Filosofía</a></li>
+                    <li><a href="Psicologia.html">Psicología</a></li>
+                    <li><a href="Economia.html">Economía</a></li>
+                    <li><a href="Biografias.html">Biografías</a></li>
+                    <li><a href="Fantasia.html">Fantasía</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content Area -->
+            <section class="libros">
+                <h2>Libros Destacados</h2>
+                <div class="lista-libros" id="lista-libros">
+                    <!-- Libros con portadas -->
+                    <div class="libro">
+                        <a href="/Libros-HTML/El Alquimista.html">
+                        <img src="/IMG/El Alquimista.webp" alt="Portada de El Alquimista" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Alquimista</h3>
+                            <p>Paulo Coelho</p>
+                            <p>Ficción</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/1984.html">
+                        <img src="/IMG/Portadas/1984.webp" alt="Portada de 1984" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>1984</h3>
+                            <p>George Orwell</p>
+                            <p>No Ficción</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El Origen De las especies.html">
+                        <img src="/IMG/portadas/El Origen De las Especies.webp" alt="Portada de El Origen de las Especies" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Origen de las Especies</h3>
+                            <p>Charles Darwin</p>
+                            <p>Ciencia</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/Historia de la filosofia occidental.html">
+                            <img src="/IMG/portadas/Historia De La Filosofia.webp" alt="Portada de La Historia de la Filosofía" class="libro-imagen">
+                            <div class="libro-contenido">
+                                <h3>La Historia de la Filosofía</h3>
+                                <p>Bertrand Russell</p>
+                                <p>Filosofía</p>
+                            </div>
+                        </a> 
+                    </div>
+                    
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El Arte de la guerra.html">
+                        <img src="/IMG/portadas/El Arte De La Guerra.webp" alt="Portada de El Arte de la Guerra" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Arte de la Guerra</h3>
+                            <p>Sun Tzu</p>
+                            <p>Historia</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/Psicologia de las masas.html">
+                        <img src="/IMG/portadas/Psicologia De Las Masas.webp" alt="Portada de La Psicología de las Masas" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>La Psicología de las Masas</h3>
+                            <p>Gustave Le Bon</p>
+                            <p>Psicología</p>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El Gran Gatsby.html">
+                        <img src="/IMG/Portadas/El Gran Gatsby.webp" alt="Portada de El Gran Gatsby" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Gran Gatsby</h3>
+                            <p>F. Scott Fitzgerald</p>
+                            <p>Ficción</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El capital.html">
+                        <img src="/IMG/portadas/El Capital.webp" alt="Portada de El Capital" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Capital</h3>
+                            <p>Karl Marx</p>
+                            <p>Economía</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/La Republica.html">
+                        <img src="/IMG/portadas/La Replica.webp" alt="Portada de La República" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>La República</h3>
+                            <p>Platón</p>
+                            <p>Filosofía</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El segundo sexo.html">
+                        <img src="/IMG/portadas/El Segundo Sexo.webp" alt="Portada de El Segundo Sexo" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Segundo Sexo</h3>
+                            <p>Simone de Beauvoir</p>
+                            <p>Filosofía</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/La Odisea.html">
+                        <img src="/IMG/portadas/La Odisea.webp" alt="Portada de La Odisea" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>La Odisea</h3>
+                            <p>Homero</p>
+                            <p>Historia</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/Los Miserables.html">
+                        <img src="/IMG/portadas/Los Miserables.webp" alt="Portada de Los Miserables" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>Los Miserables</h3>
+                            <p>Victor Hugo</p>
+                            <p>Ficción</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El Libro de los cinco anillos.html">
+                        <img src="/IMG/portadas/Los Cinco Anillos.webp" alt="Portada de El Libro de los Cinco Anillos" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Libro de los Cinco Anillos</h3>
+                            <p>Miyamoto Musashi</p>
+                            <p>Arte</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                        <a href="/Libros-HTML/El Hombre y sus Simbolos.html">
+                        <img src="/IMG/portadas/El Hombre Y sus simbolos.webp" alt="Portada de El Hombre y sus Símbolos" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Hombre y sus Símbolos</h3>
+                            <p>Carl Jung</p>
+                            <p>Psicología</p>
+                        </div>
+                    </a>
+                    </div>
+
+                    <div class="libro">
+                    
+                        <img src="/IMG/portadas/El Hobbit.webp" alt="Portada de El Hobbit" class="libro-imagen">
+                        <div class="libro-contenido">
+                            <h3>El Hobbit</h3>
+                            <p>J.R.R. Tolkien</p>
+                            <p>Fantasía</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="libros-dinamicos">
+                    <!-- Aquí se agregarán los libros desde el backend -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Biblioteca Digital. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/JAVASCRIPT/Conexion.js"></script>
+    <script src="/JAVASCRIPT/Carrito.js"></script>
+</body>
+
+</html>
